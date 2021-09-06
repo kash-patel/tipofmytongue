@@ -1,0 +1,39 @@
+.blue-outline {
+  @apply border-2 bg-transparent text-blue-500 border-blue-500;
+}
+
+.indigo-outline {
+  @apply border-2 bg-transparent text-indigo-500 border-indigo-500;
+}
+
+.white-outline {
+  @apply border-2 bg-transparent text-white border-white;
+}
+
+.white-background {
+  @apply border-none bg-white text-gray-700;
+}
+
+.blue-background {
+  @apply border-none bg-blue-500 text-white;
+}
+
+.indigo-background {
+  @apply border-none bg-indigo-500 text-white;
+}
+
+.white-gradient-background {
+  @apply border-none bg-gradient-to-br from-white to-gray-100 text-gray-700;
+}
+
+.gradient-background {
+  @apply border-none bg-gradient-to-br from-blue-500 to-indigo-600 text-white;
+}
+
+.center-flex {
+  @apply flex justify-center items-center text-center;
+}
+
+h1 {
+  @apply text-3xl font-bold;
+}
