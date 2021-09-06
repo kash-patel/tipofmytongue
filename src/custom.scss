@@ -1,3 +1,7 @@
+* {
+  transition: all ease 0.1s;
+}
+
 .blue-outline {
   @apply border-2 bg-transparent text-blue-500 border-blue-500;
 }
