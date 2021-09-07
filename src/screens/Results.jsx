@@ -4,7 +4,7 @@ import { FiArrowLeft } from "react-icons/fi";
 import axios from "axios";
 import ResultsList from "../components/resultsScreen/ResultsList";
 
-const Results = ({ location }) => {
+const Results = ({ location, history }) => {
   const [results, updateResults] = useState([]);
   const [error, updateError] = useState(null);
   const [loading, updateLoading] = useState(false);
@@ -47,11 +47,12 @@ const Results = ({ location }) => {
           broadening your search.
         </h1>
       )}
-      <Link to="/">
-        <button className="mt-10 white-outline rounded-full p-3">
-          <FiArrowLeft size="24" />
-        </button>
-      </Link>
+      <button
+        className="mt-10 white-outline rounded-full p-3"
+        onClick={history.goBack}
+      >
+        <FiArrowLeft size="24" />
+      </button>
     </>
   );
 };
