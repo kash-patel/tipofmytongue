@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import axios from "axios";
 import ResultsList from "../components/resultsScreen/ResultsList";
