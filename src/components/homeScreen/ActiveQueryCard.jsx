@@ -25,7 +25,7 @@ const ActiveQueryCard = ({ rel, word }) => {
   };
 
   return (
-    <div className="white-background rounded m-3 shadow hover:-translate-y-1">
+    <div className="white-background rounded m-3 shadow-md hover:-translate-y-1">
       {!isExpanded ? (
         <div
           className="grid grid-cols-8 cursor-pointer select-none"

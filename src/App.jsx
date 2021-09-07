@@ -14,16 +14,16 @@ const App = () => {
   const [state, dispatch] = useReducer(queryReducer, initialState);
 
   useEffect(() => {
-    console.log(
-      "src/App.jsx: Current queries: " + JSON.stringify(state.queries)
-    );
     localStorage.setItem("queries", JSON.stringify(state.queries));
   }, [state.queries]);
 
   const Provider = ({ children }) => {
     return (
       <globalContext.Provider
-        value={{ queries: state.queries, dispatchQueryAction: dispatch }}
+        value={{
+          queries: state.queries,
+          dispatchQueryAction: dispatch,
+        }}
       >
         {children}
       </globalContext.Provider>

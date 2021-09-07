@@ -9,6 +9,7 @@ export const query = (state = { queries: [] }, action) => {
     case CREATE_QUERY:
       const id = `${action.payload.rel}/${action.payload.word}`;
       if (state.queries.find((query) => query.id === id)) return state;
+
       return {
         ...state,
         queries: [
