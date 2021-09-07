@@ -2,7 +2,8 @@ import React from "react";
 
 const useClickOutside = (ref, callback) => {
   const handleClick = (e) => {
-    if (ref.current && !ref.current.contains(e.target)) {
+    // if (ref.current && !ref.current.contains(e.target)) {
+    if (ref.current) {
       callback();
     }
   };
