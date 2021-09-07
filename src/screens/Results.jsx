@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FiArrowLeft } from "react-icons/fi";
 import axios from "axios";
 import ResultsList from "../components/resultsScreen/ResultsList";
 
@@ -23,7 +25,7 @@ const Results = ({ location }) => {
       updateLoading(false);
     };
     getData();
-  }, []);
+  }, [location.search]);
 
   return (
     <>
@@ -34,12 +36,22 @@ const Results = ({ location }) => {
           <h1>Huh. Datamuse threw an error:</h1>
           <p>{error.message}</p>
         </>
-      ) : (
+      ) : results.length > 0 ? (
         <>
           <h1>Results</h1>
           <ResultsList results={results} />
         </>
+      ) : (
+        <h1>
+          Hmm. Couldn&rsquo;t find any words that fit your criteria. Try
+          broadening your search.
+        </h1>
       )}
+      <Link to="/">
+        <button className="mt-10 white-outline rounded-full p-3">
+          <FiArrowLeft size="24" />
+        </button>
+      </Link>
     </>
   );
 };
