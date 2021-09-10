@@ -26,14 +26,14 @@ const Home = () => {
           <ActiveQueryList queries={queries} />
           <div className="flex-center">
             <button
-              className="p-3 mx-3 white-outline rounded-full"
+              className="p-3 mx-3 maroon-outline hover:text-gray-900 hover:border-gray-900 rounded-full"
               onClick={() => setShowNewQueryForm(true)}
             >
               <FiPlus size="24" />
             </button>
             {queries.length > 0 && (
               <Link to={`/search?${queryString}`}>
-                <button className="p-3 mx-3 white-outline rounded-full">
+                <button className="p-3 mx-3 maroon-outline hover:text-gray-900 hover:border-gray-900 rounded-full">
                   <FiSearch size="24" />
                 </button>
               </Link>

@@ -3,7 +3,7 @@ import globalContext from "../../contexts/global/context";
 import { updateQuery, deleteQuery } from "../../actions/global/query";
 import { queryToText } from "../../utils/homeScreen/query";
 import PopupQueryRelSelector from "./PopupQueryRelSelector";
-import { FiTrash, FiCheck, FiChevronUp, FiMenu } from "react-icons/fi";
+import { FiTrash, FiCheck, FiX, FiMenu } from "react-icons/fi";
 
 const ActiveQueryCard = ({ rel, word }) => {
   const { dispatchQueryAction } = useContext(globalContext);
@@ -25,15 +25,17 @@ const ActiveQueryCard = ({ rel, word }) => {
   };
 
   return (
-    <div className="white-background rounded m-3 shadow-md hover:-translate-y-1">
+    <div className="m-3">
       {!isExpanded ? (
         <div
-          className="grid grid-cols-8 cursor-pointer select-none"
+          className="black-underline grid grid-cols-8 cursor-pointer select-none hover:text-gray-500 hover:border-gray-500"
           onClick={() => setIsExanded(true)}
         >
           <div className="col-span-6 text-left p-3">
-            <p>{queryToText(rel)}</p>
-            <p className="text-xl font-bold">{word}</p>
+            <p>
+              <em>{queryToText(rel)}</em>
+            </p>
+            <p className="text-2xl font-bold display">{word}</p>
           </div>
           <button
             onClick={() => dispatchQueryAction(deleteQuery(`${rel}/${word}`))}
@@ -43,10 +45,14 @@ const ActiveQueryCard = ({ rel, word }) => {
           </button>
         </div>
       ) : (
-        <form action="/" onSubmit={formSubmitHandler} className="p-3">
+        <form
+          action="/"
+          onSubmit={formSubmitHandler}
+          className="p-3 black-outline-rect"
+        >
           <div
             onClick={() => setRelSelectorActive(true)}
-            className="relative rounded p-3 shadow-md border flex items-center justify-between cursor-pointer hover:shadow-lg"
+            className="relative p-2 maroon-underline flex items-center justify-between cursor-pointer hover:border-gray-900 hover:text-gray-900"
           >
             <span>{queryToText(newQuery.rel)}</span>
             <FiMenu size="20" />
@@ -61,7 +67,7 @@ const ActiveQueryCard = ({ rel, word }) => {
             type="text"
             required
             minLength="1"
-            className="w-full mt-3 rounded disabled:cursor-default disabled:bg-gray-100 disabled:pointer-events-none"
+            className="w-full mt-3 text-lg maroon-underline hover:text-gray-900 hover:border-gray-900 disabled:cursor-default disabled:border-gray-400 disabled:pointer-events-none focus:text-gray-900 focus:border-gray-900 focus:ring-0"
             value={newQuery.word}
             onChange={(e) => setNewQuery({ ...newQuery, word: e.target.value })}
             disabled={relSelectorActive}
@@ -69,24 +75,24 @@ const ActiveQueryCard = ({ rel, word }) => {
           <div className="center-flex">
             <button
               type="submit"
-              className="blue-outline rounded-full p-3 m-3 center-flex"
+              className="rounded-full maroon-outline hover:border-gray-900 hover:text-gray-900 p-3 m-3 center-flex"
               disabled={relSelectorActive}
             >
               <FiCheck size="24" />
             </button>
             <button
               onClick={() => dispatchQueryAction(deleteQuery(`${rel}/${word}`))}
-              className="blue-outline rounded-full p-3 m-3 center-flex"
+              className="rounded-full maroon-outline hover:border-gray-900 hover:text-gray-900 p-3 m-3 center-flex"
               disabled={relSelectorActive}
             >
               <FiTrash size="24" />
             </button>
             <button
               onClick={() => setIsExanded(false)}
-              className="blue-outline rounded-full p-3 m-3 center-flex"
+              className="rounded-full maroon-outline hover:border-gray-900 hover:text-gray-900 p-3 m-3 center-flex"
               disabled={relSelectorActive}
             >
-              <FiChevronUp size="24" />
+              <FiX size="24" />
             </button>
           </div>
         </form>

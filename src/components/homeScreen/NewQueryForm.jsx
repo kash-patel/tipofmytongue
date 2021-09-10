@@ -27,11 +27,11 @@ const NewQueryForm = ({ closeForm }) => {
     <form
       action="/"
       onSubmit={submitHandler}
-      className="white-background rounded p-3 mx-3 mt-10 shadow-md"
+      className="black-outline-rect p-3 mx-3 mt-10"
     >
       <div
         onClick={() => setRelSelectorActive(true)}
-        className="relative rounded p-3 shadow-md border flex items-center justify-between cursor-pointer hover:shadow-lg"
+        className="relative p-2 maroon-underline hover:text-gray-900 hover:border-gray-900 flex items-center justify-between cursor-pointer"
       >
         <span>{queryToText(newQuery.rel)}</span>
         <FiMenu size="20" />
@@ -46,7 +46,7 @@ const NewQueryForm = ({ closeForm }) => {
         type="text"
         required
         minLength="1"
-        className="w-full mt-3 rounded disabled:cursor-default disabled:bg-gray-100 disabled:pointer-events-none"
+        className="w-full mt-3 text-lg maroon-underline hover:text-gray-900 hover:border-gray-900 disabled:cursor-default disabled:dark-paper-background disabled:pointer-events-none focus:border-gray-900 focus:ring-0 focus:text-gray-900"
         placeholder="type a word here..."
         onChange={(e) => setNewQuery({ ...newQuery, word: e.target.value })}
         disabled={relSelectorActive}
@@ -54,14 +54,14 @@ const NewQueryForm = ({ closeForm }) => {
       <div className="center-flex mt-5 mb-2">
         <button
           type="submit"
-          className="p-3 mx-3 rounded-full blue-outline disabled:cursor-default disabled:text-gray-300 disabled:border-gray-300 disabled:pointer-events-none"
+          className="p-3 mx-3 rounded-full maroon-outline hover:border-gray-900 hover:text-gray-900 disabled:cursor-default disabled:text-gray-400 disabled:border-gray-400 disabled:pointer-events-none"
           disabled={relSelectorActive}
         >
           <FiCheck size="24" />
         </button>
         <button
           onClick={closeForm}
-          className="p-3 mx-3 rounded-full blue-outline disabled:cursor-default disabled:text-gray-300 disabled:border-gray-300 disabled:pointer-events-none"
+          className="p-3 mx-3 rounded-full maroon-outline hover:border-gray-900 hover:text-gray-900 disabled:cursor-default disabled:text-gray-400 disabled:border-gray-400 disabled:pointer-events-none"
           disabled={relSelectorActive}
         >
           <FiX size="24" />

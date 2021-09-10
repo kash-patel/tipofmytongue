@@ -11,13 +11,13 @@ const PopupQueryRelSelector = ({ selectRel, closeSelector }) => {
   return (
     <div
       ref={relSelectorRef}
-      className="absolute max-h-96 w-full overflow-y-auto mx-auto left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 white-background rounded shadow-md"
+      className="shadow black-outline-rect absolute max-h-96 w-full overflow-y-auto mx-auto left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 paper-background"
     >
       {queryCodes.map((q, key) => (
         <p
           key={key}
           id={q}
-          className="p-3 border-b cursor-pointer hover:bg-gray-100 transition-none select-none"
+          className="p-3 cursor-pointer hover:text-red-700 transition-none select-none"
           onClick={selectRel}
         >
           {queryToText(q)}

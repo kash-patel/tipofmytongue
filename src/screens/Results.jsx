@@ -27,7 +27,7 @@ const Results = ({ location, history }) => {
   }, [location.search]);
 
   return (
-    <>
+    <div className="container p-3">
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
@@ -47,12 +47,12 @@ const Results = ({ location, history }) => {
         </h1>
       )}
       <button
-        className="mt-10 white-outline rounded-full p-3"
+        className="mt-10 maroon-outline hover:border-gray-900 hover:text-gray-900 rounded-full p-3"
         onClick={history.goBack}
       >
         <FiArrowLeft size="24" />
       </button>
-    </>
+    </div>
   );
 };
 

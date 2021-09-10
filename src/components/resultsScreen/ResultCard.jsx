@@ -2,8 +2,8 @@ import React from "react";
 
 const ResultCard = ({ word }) => {
   return (
-    <div className="white-background rounded m-3 p-3 shadow-md hover:-translate-y-1">
-      <p className="font-bold text-xl">{word}</p>
+    <div className="m-3 p-3 text-red-700 hover:text-gray-900 select-none">
+      <p className="display text-xl">{word}</p>
     </div>
   );
 };

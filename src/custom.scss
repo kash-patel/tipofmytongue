@@ -1,37 +1,58 @@
 * {
   transition: all ease 0.1s;
+  font-family: "EB Garamond", serif;
+  font-size: 1.1rem;
 }
 
-.blue-outline {
-  @apply border-2 bg-transparent text-blue-500 border-blue-500;
+.black-outline {
+  @apply border-2 bg-transparent text-gray-900 border-gray-900;
 }
 
-.indigo-outline {
-  @apply border-2 bg-transparent text-indigo-500 border-indigo-500;
+.black-outline-rect {
+  @apply border-2 border-l-0 border-r-0 bg-transparent text-gray-900 border-gray-900;
 }
 
-.white-outline {
-  @apply border-2 bg-transparent text-white border-white;
+.black-underline {
+  @apply border-2 border-l-0 border-r-0 border-t-0 bg-transparent text-gray-900 border-gray-900;
 }
 
-.white-background {
-  @apply border-none bg-white text-gray-700;
+.maroon-outline {
+  @apply border-2 bg-transparent text-red-700 border-red-700;
 }
 
-.blue-background {
-  @apply border-none bg-blue-500 text-white;
+.maroon-outline-rect {
+  @apply border-2 border-l-0 border-r-0 bg-transparent text-red-700 border-red-700;
 }
 
-.indigo-background {
-  @apply border-none bg-indigo-500 text-white;
+.maroon-underline {
+  @apply border-2 border-l-0 border-r-0 border-t-0 bg-transparent text-red-700 border-red-700;
 }
 
-.white-gradient-background {
-  @apply border-none bg-gradient-to-br from-white to-gray-100 text-gray-700;
+.gray-outline {
+  @apply border-2 bg-transparent text-gray-500 border-gray-500;
 }
 
-.gradient-background {
-  @apply border-none bg-gradient-to-br from-blue-500 to-indigo-600 text-white;
+.gray-outline-rect {
+  @apply border-2 border-l-0 border-r-0 bg-transparent text-gray-500 border-gray-500;
+}
+
+.gray-underline {
+  @apply border-2 border-l-0 border-r-0 border-t-0 bg-transparent text-gray-500 border-gray-500;
+}
+
+.paper-background {
+  @apply text-gray-900;
+  background: #edc;
+}
+
+.dark-paper-background {
+  @apply text-gray-900;
+  background: #dcb;
+}
+
+.display {
+  font-family: "Playfair Display";
+  font-weight: 900;
 }
 
 .center-flex {
@@ -40,4 +61,6 @@
 
 h1 {
   @apply text-3xl font-bold;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
 }
